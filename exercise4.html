@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #5: Input check for minimmum number of charecter should be 6 and password match in both input </title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        .err {
+            color: red;
+            font-size: 0.7em;
+        }
+    </style>
+    <script>
+        
+        function chike() {
+            document.getElementById("pw1_check").innerHTML="";
+            document.getElementById("pw2_check").innerHTML="";
+
+            var upassword1=document.getElementById("password1");
+            var upassword2=document.getElementById("password2");
+
+            let isvaled = true;
+
+            if(upassword1.length.value < 6){
+                document.getElementById("pw1_check").innerHTML="error";
+                isvaled = false;
+
+            }
+            if(upassword2.value !==  upassword1.value){
+                document.getElementById("pw2_check").innerHTML="not math";
+                isvaled = false;
+            }
+            return isvaled;
+            
+        }
+    </script>
+</head>
+<body>
+
+<form name="pw">
+    <table>
+        <tr>
+            <td>Password (min 6 characters):</td>
+            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password"></td>
+            <td>
+                <div id="pw1_check" class="err"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Repeat password:</td>
+            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password"></td>
+            <td>
+                <div id="pw2_check" class="err"></div>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" id="submitBtn" onclick="chike()">
+</form>
+
+</body>
+</html>
+
