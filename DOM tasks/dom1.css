@@ -1,0 +1,18 @@
+.del_btn{
+    margin-left: 5px;
+    color: red;
+    cursor: pointer;
+    border-radius: 4px;
+    border-style: solid;
+    padding: 5px; ;
+    border: 10px;;
+}
+.del_btn li{
+    border: 5px;
+    margin-left: 20px;
+    padding: 10px;
+    color:goldenrod;
+}
+.som{
+    background-color: aqua;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script>
+        function addtask() {
+            let taskinput = document.getElementById("taskinput");
+            let tasklist =  document.getElementById("tasklist");
+
+            if (taskinput.value.trim() != "") {
+                let li = document.createElement("li");
+                li.textContent = taskinput.value;
+                
+                let deletbutton = document.createElement("span");
+                deletbutton.textContent = "Delete";
+                deletbutton.className = 'del_btn';
+                deletbutton.onclick = function () {
+                    tasklist.removeChild(li);
+                    
+                }
+                li.appendChild(deletbutton);
+                tasklist.appendChild(li);
+                taskinput.value = "" ;
+                
+            }
+            
+        }
+
+    </script>
+</head>
+<body class="som">
+    <h1>these are some of our tasks</h1>
+    <input type="text" id="taskinput" placeholder="enter your task">
+    <button onclick="addtask()">Add Task</button>
+    <ul id="tasklist"></ul>
+    
+</body>
+</html>
